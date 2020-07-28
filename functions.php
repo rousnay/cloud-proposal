@@ -266,7 +266,7 @@ function custom_post_type() {
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
         'menu_position'       => 5,
-        'can_export'          => true,
+        'can_export'          => false,
         'has_archive'         => true,
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
@@ -286,3 +286,14 @@ function custom_post_type() {
 */
  
 add_action( 'init', 'custom_post_type', 0 );
+
+
+//Disable Gutenberg / block editor for proposals post types
+
+add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
+function prefix_disable_gutenberg($current_status, $post_type)
+{
+    // Use your post type key instead of 'product'
+    if ($post_type === 'proposals') return false;
+    return $current_status;
+}
