@@ -16,7 +16,7 @@ get_header();
     <?php while( have_rows('slides') ): the_row(); ?>
       <div id="slide-<?php echo get_row_index(); ?>">
 			        	<p><?php the_sub_field('slide_content'); ?></p>
-			        	<a><?php the_sub_field('slide_read_more'); ?></a>
+			        	<a><?php the_sub_field('read_more_text'); ?></a>
 			        </div>
     <?php endwhile; ?>
 <?php endif; ?>

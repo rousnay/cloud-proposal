@@ -191,109 +191,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 include_once( get_stylesheet_directory() . '/includes/acf-settings.php' );
 
 
-
-// Post type
-/*
-// Our custom post type function
-function create_posttype() {
- 
-    register_post_type( 'proposal',
-    // CPT Options
-        array(
-            'labels' => array(
-                'name' => __( 'Proposal' ),
-                'singular_name' => __( 'Proposal' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'proposals'),
-            'show_in_rest' => true,
- 
-        )
-    );
-}
-// Hooking up our function to theme setup
-add_action( 'init', 'create_posttype' );
+//Proposal post types
+include_once( get_stylesheet_directory() . '/includes/custom-posts.php' );
 
 
-*/
+//Post duplicator
+include_once( get_stylesheet_directory() . '/includes/duplicator.php' );
 
 
-
-
-
-/*
-* Creating a function to create our CPT
-*/
- 
-function custom_post_type() {
- 
-// Set UI labels for Custom Post Type
-    $labels = array(
-        'name'                => _x( 'Proposals', 'Post Type General Name', 'cloud_proposal' ),
-        'singular_name'       => _x( 'Proposal', 'Post Type Singular Name', 'cloud_proposal' ),
-        'menu_name'           => __( 'Proposals', 'cloud_proposal' ),
-        'parent_item_colon'   => __( 'Parent Proposal', 'cloud_proposal' ),
-        'all_items'           => __( 'All Proposals', 'cloud_proposal' ),
-        'view_item'           => __( 'View Proposal', 'cloud_proposal' ),
-        'add_new_item'        => __( 'Add New Proposal', 'cloud_proposal' ),
-        'add_new'             => __( 'Add New', 'cloud_proposal' ),
-        'edit_item'           => __( 'Edit Proposal', 'cloud_proposal' ),
-        'update_item'         => __( 'Update Proposal', 'cloud_proposal' ),
-        'search_items'        => __( 'Search Proposal', 'cloud_proposal' ),
-        'not_found'           => __( 'Not Found', 'cloud_proposal' ),
-        'not_found_in_trash'  => __( 'Not found in Trash', 'cloud_proposal' ),
-    );
-     
-// Set other options for Custom Post Type
-     
-    $args = array(
-        'label'               => __( 'proposals', 'cloud_proposal' ),
-        'description'         => __( 'Proposal news and reviews', 'cloud_proposal' ),
-        'labels'              => $labels,
-        // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-        // You can associate this CPT with a taxonomy or custom taxonomy. 
-        'taxonomies'          => array( 'genres' ),
-        /* A hierarchical CPT is like Pages and can have
-        * Parent and child items. A non-hierarchical CPT
-        * is like Posts.
-        */ 
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => true,
-        'show_in_admin_bar'   => true,
-        'menu_position'       => 5,
-        'can_export'          => false,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-        'show_in_rest' => true,
- 
-    );
-     
-    // Registering your Custom Post Type
-    register_post_type( 'proposals', $args );
- 
-}
- 
-/* Hook into the 'init' action so that the function
-* Containing our post type registration is not 
-* unnecessarily executed. 
-*/
- 
-add_action( 'init', 'custom_post_type', 0 );
-
-
-//Disable Gutenberg / block editor for proposals post types
-
-add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
-function prefix_disable_gutenberg($current_status, $post_type)
-{
-    // Use your post type key instead of 'product'
-    if ($post_type === 'proposals') return false;
-    return $current_status;
-}
+//Capability manager (user rule)
+include_once( get_stylesheet_directory() . '/includes/theme-settings.php' );
