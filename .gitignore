@@ -1,0 +1,12 @@
+node_modules
+ 
+src/components
+src/lib
+_assets
+.sass-cache
+tmp
+.npm-debug.log
+*.css.map
+.idea
+src/.idea
+/ /
