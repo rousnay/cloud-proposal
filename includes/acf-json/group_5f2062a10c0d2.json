@@ -84,6 +84,25 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_5f23e811ae729",
+            "label": "Add a Contact Us slide",
+            "name": "contact_us_slide",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Check if you wish to make a 'contact us' slide based on the information you place in the user profile section",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -113,5 +132,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1595968613
+    "modified": 1596189123
 }
