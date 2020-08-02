@@ -13,6 +13,10 @@ get_header();
 	<main id="primary" class="site-main">
 
 
+
+<div class="container">
+
+<div class="proposal-slider">
 	<div id="bb-bookblock" class="bb-bookblock">
 	<?php if( have_rows('slides') ): ?>
 	    <?php while( have_rows('slides') ): the_row(); ?>
@@ -30,7 +34,13 @@ get_header();
 						<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
 						<a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
 					</nav>
-					
+			
+
+</div>
+
+
+</div>
+
 	</main><!-- #main -->
 
 <?php
