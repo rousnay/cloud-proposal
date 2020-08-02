@@ -98,9 +98,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Check if you wish to make a 'contact us' slide based on the information you provided in the user profile section",
+            "message": "If you wish to make a 'contact us' slide based on the information you provided in the user profile section",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         }
@@ -132,5 +132,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1596380360
+    "modified": 1596407540
 }

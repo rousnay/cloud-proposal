@@ -6,43 +6,94 @@
  *
  * @package cloud_proposal
  */
-
-get_header();
 ?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<main id="primary" class="site-main">
+	<?php wp_head(); ?>
+</head>
 
-
-
-<div class="container">
-
-<div class="proposal-slider">
-	<div id="bb-bookblock" class="bb-bookblock">
-	<?php if( have_rows('slides') ): ?>
-	    <?php while( have_rows('slides') ): the_row(); ?>
-	      <div class="bb-item" id="slide-<?php echo get_row_index(); ?>">
-				        	<p><?php the_sub_field('slide_content'); ?></p>
-				        	<a><?php the_sub_field('read_more_text'); ?></a>
-				        </div>
-	    <?php endwhile; ?>
-	<?php endif; ?>
-	</div>
-
-<nav>
-						<a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a>
-						<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
-						<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
-						<a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
-					</nav>
-			
-
-</div>
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 
 
-</div>
+	<?php 
+	global $post;
+	$author_id = $post->post_author;							 
+	?>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cloud-proposal' ); ?></a>
 
-	</main><!-- #main -->
+		<main id="primary" class="site-main">
 
-<?php
-get_sidebar();
-get_footer();
+			<div class="proposal-slider">
+				<div id="bb-bookblock" class="bb-bookblock">
+					<?php if( have_rows('slides') ): ?>
+						<?php while( have_rows('slides') ): the_row(); ?>
+
+							<div class="bb-item" id="slide-<?php echo get_row_index(); ?>">
+
+								<div class="container">
+									<?php the_sub_field('slide_content'); ?>
+
+									<div class="btn_readmore">read more</div>
+
+									<div class="block_readmore">
+										<div class="block_readmore_inner">
+											<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+											<?php the_sub_field('read_more_text'); ?>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						<?php endwhile; ?>
+
+						<?php
+
+						if( get_field('contact_us_slide') == 'true' ) { ?>
+
+							<div class="bb-item" id="slide-contact">
+
+								<div class="container">
+
+
+									<h1 class="main-header">Contact Us</h1>
+									<h1><?php the_field('company_name', 'user_'.$author_id) ?></h1>
+
+									<img width="150px" src="<?php the_field('company_logo', 'user_'.$author_id) ?>" alt="">
+
+									<ul class="proposal-address">
+										<li><?php the_field('phone_number', 'user_'.$author_id) ?></li>
+										<li><?php the_field('business_email', 'user_'.$author_id) ?></li>
+										<li><?php the_field('address_line_1', 'user_'.$author_id) ?></li>
+										<li><?php the_field('address_line_2', 'user_'.$author_id) ?></li>
+										<li><?php the_field('website', 'user_'.$author_id) ?></li>
+									</ul>	
+								</div>
+							</div>
+						<?php } endif;?>
+					</div>
+
+				</div>
+
+				<!-- </div> -->
+
+
+				<nav class="arrow">
+
+					<a id="bb-nav-prev" href="#" class="btn_prev">Previous</a>
+
+					<a id="bb-nav-next" href="#" class="btn_next">Next</a>
+
+				</nav>
+
+			</main><!-- #main -->
+
+			<?php
+			get_sidebar();
+			get_footer();
