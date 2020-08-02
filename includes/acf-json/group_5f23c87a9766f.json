@@ -145,13 +145,6 @@
                 "operator": "==",
                 "value": "all"
             }
-        ],
-        [
-            {
-                "param": "user_form",
-                "operator": "==",
-                "value": "all"
-            }
         ]
     ],
     "menu_order": 1,
@@ -162,5 +155,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "User profile information",
-    "modified": 1596186424
+    "modified": 1596380282
 }

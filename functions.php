@@ -144,6 +144,9 @@ add_action( 'widgets_init', 'cloud_proposal_widgets_init' );
  */
 function cloud_proposal_scripts() {
 	wp_enqueue_style( 'cloud-proposal-style', get_stylesheet_uri(), array(), _S_VERSION );
+
+	wp_enqueue_style('cloud-proposal-bookblock-css', get_template_directory_uri() . '/css/bookblock.css', array(), _S_VERSION, false );
+
 	wp_style_add_data( 'cloud-proposal-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'cloud-proposal-modernizr-custom-js', get_template_directory_uri() . '/js/modernizr.custom.js', array('jquery'), _S_VERSION, false );
@@ -154,7 +157,7 @@ function cloud_proposal_scripts() {
 
 
 
-	wp_enqueue_script( 'cloud-proposal-jquerypp-custom-js', get_template_directory_uri() . '/js/jquerypp.custom.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'cloud-proposal-jquerypp-custom-js', get_template_directory_uri() . '/js/jquerypp-custom.js', array('jquery'), _S_VERSION, true );
 
 
 	wp_enqueue_script( 'cloud-proposal-jquery-bookblock-js', get_template_directory_uri() . '/js/jquery.bookblock.min.js', array('jquery'), _S_VERSION, true );

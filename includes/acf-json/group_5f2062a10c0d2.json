@@ -87,7 +87,7 @@
         },
         {
             "key": "field_5f23e811ae729",
-            "label": "Add a Contact Us slide",
+            "label": "Add a contact us slide",
             "name": "contact_us_slide",
             "type": "true_false",
             "instructions": "",
@@ -98,7 +98,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Check if you wish to make a 'contact us' slide based on the information you place in the user profile section",
+            "message": "Check if you wish to make a 'contact us' slide based on the information you provided in the user profile section",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -132,5 +132,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1596189123
+    "modified": 1596380360
 }

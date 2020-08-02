@@ -4,8 +4,7 @@
     /******************************
 	 Other settings
 	 ******************************/
-
-var Page = (function() {
+			var Page = (function() {
 				
 				var config = {
 						$bookBlock : $( '#bb-bookblock' ),
@@ -16,9 +15,9 @@ var Page = (function() {
 					},
 					init = function() {
 						config.$bookBlock.bookblock( {
-							speed : 800,
+							speed : 1000,
 							shadowSides : 0.8,
-							shadowFlip : 0.7
+							shadowFlip : 0.4
 						} );
 						initEvents();
 					},
@@ -84,9 +83,6 @@ var Page = (function() {
 
 			})();
 
-
-Page.init();
-
-jQuery( '#bb-bookblock' ).bookblock();
+			Page.init();
 
 })(jQuery);
