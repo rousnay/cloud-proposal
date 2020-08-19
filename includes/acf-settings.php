@@ -54,6 +54,28 @@ function my_acf_json_load_point( $paths ) {
     
 }
 
+
+
+//Add thumbnail to the post search in post object ACF field
+
+add_filter('acf/fields/post_object/result', 'my_acf_fields_post_object_result', 10, 4);
+function my_acf_fields_post_object_result( $text, $post, $field, $post_id ) {
+
+	$post_thumbnail_url = get_the_post_thumbnail_url($post->ID);
+	$post_title = get_the_title( $post->ID );
+
+	$avatar = '<div class="post_ava_prefilter_wrapper" title="'.$post_title.'">';
+	$avatar .= '<div class="ava_prefilter_wrapper"><img width="150" class="ava_square" src="'.$post_thumbnail_url.'" /></div>';
+	$avatar .= '</div>';
+
+    $text .=  $avatar ;
+
+    return $text;
+}
+
+
+
+
 /*****
  Options Page
 ***************/
