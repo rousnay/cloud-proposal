@@ -91,6 +91,8 @@ if ( current_user_can( 'administrator' ) ){
 
 function remove_menus_for_editor(){
 
+  remove_menu_page( 'edit.php?post_type=master_slides' );    //Master Slides
+
   remove_menu_page( 'jetpack' );                    //Jetpack* 
   remove_menu_page( 'edit.php' );                   //Posts
   remove_menu_page( 'edit.php?post_type=page' );    //Pages
@@ -102,7 +104,6 @@ function remove_menus_for_editor(){
   remove_menu_page( 'options-general.php' );        //Settings
   remove_menu_page( 'upload.php' );                 //Media
   // remove_menu_page( 'users.php' );                  //Users
-   
 }
 
 if ( !current_user_can( 'administrator' ) ){

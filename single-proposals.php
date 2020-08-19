@@ -63,7 +63,7 @@
 						        // Setup this post for WP functions (variable must be named $post).
 								setup_postdata($post); ?>
 
-								<div class="bb-item" id="slide-contact-<?php echo $key ?>">
+								<div class="bb-item" id="slide-template-<?php echo $key ?>">
 
 									<div class="container">
 
