@@ -1,6 +1,78 @@
 <?php
 
-function custom_post_type() {
+/* 
+* Proposal for administrators 
+*/
+
+function master_slide_post_type() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Master Slides', 'Post Type General Name', 'cloud_proposal' ),
+        'singular_name'       => _x( 'Master Slide', 'Post Type Singular Name', 'cloud_proposal' ),
+        'menu_name'           => __( 'Master Slides', 'cloud_proposal' ),
+        'parent_item_colon'   => __( 'Parent Slide', 'cloud_proposal' ),
+        'all_items'           => __( 'All Master Slides', 'cloud_proposal' ),
+        'view_item'           => __( 'View Slide', 'cloud_proposal' ),
+        'add_new_item'        => __( 'Add New Slide', 'cloud_proposal' ),
+        'add_new'             => __( 'Add New', 'cloud_proposal' ),
+        'edit_item'           => __( 'Edit Slide', 'cloud_proposal' ),
+        'update_item'         => __( 'Update Slide', 'cloud_proposal' ),
+        'search_items'        => __( 'Search Slide', 'cloud_proposal' ),
+        'not_found'           => __( 'Not Found', 'cloud_proposal' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'cloud_proposal' ),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'master slides', 'cloud_proposal' ),
+        'description'         => __( 'List of all master slides', 'cloud_proposal' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array( 'genres' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => false,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'master_slides', $args );
+ 
+}
+ 
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+ 
+add_action( 'init', 'master_slide_post_type', 0 );
+
+
+
+/* 
+* Proposal for customers
+*/
+
+
+function customer_proposal_post_type() {
  
 // Set UI labels for Custom Post Type
     $labels = array(
@@ -59,7 +131,7 @@ function custom_post_type() {
 * unnecessarily executed. 
 */
  
-add_action( 'init', 'custom_post_type', 0 );
+add_action( 'init', 'customer_proposal_post_type', 0 );
 
 
 //Disable Gutenberg / block editor for proposals post types

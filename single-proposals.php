@@ -32,6 +32,8 @@
 
 			<div class="proposal-slider">
 				<div id="bb-bookblock" class="bb-bookblock">
+
+
 					<?php if( have_rows('slides') ): ?>
 						<?php while( have_rows('slides') ): the_row(); ?>
 
@@ -53,8 +55,40 @@
 							</div>
 						<?php endwhile; ?>
 
-						<?php
 
+						<?php $master_slides = get_field('slide_template');
+						if( $master_slides ): ?>
+							<?php foreach( $master_slides as $key=>$post ): 
+
+						        // Setup this post for WP functions (variable must be named $post).
+								setup_postdata($post); ?>
+
+								<div class="bb-item" id="slide-contact-<?php echo $key ?>">
+
+									<div class="container">
+
+										<p><?php the_content(); ?></p>
+
+										<div class="btn_readmore">read more</div>
+
+										<div class="block_readmore">
+											<div class="block_readmore_inner">
+												<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+												<?php the_field('read_more_text'); ?>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							<?php endforeach; ?>
+							<?php 
+					    // Reset the global post object so that the rest of the page works correctly.
+							wp_reset_postdata(); ?>
+						<?php endif; ?>
+
+
+						<?php
 						if( get_field('contact_us_slide') == 'true' ) { ?>
 
 							<div class="bb-item" id="slide-contact">
@@ -83,7 +117,6 @@
 
 				<!-- </div> -->
 
-
 				<nav class="arrow">
 
 					<a id="bb-nav-prev" href="#" class="btn_prev">Previous</a>
@@ -93,6 +126,7 @@
 				</nav>
 
 			</main><!-- #main -->
+
 
 			<?php
 			get_sidebar();

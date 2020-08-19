@@ -1,9 +1,9 @@
 {
-    "key": "group_5f2062a10c0d2",
-    "title": "Proposal",
+    "key": "group_5f3cb32c8db89",
+    "title": "Proposals",
     "fields": [
         {
-            "key": "field_5f206e9f6c6b5",
+            "key": "field_5f3cb32c98e84",
             "label": "Slides",
             "name": "slides",
             "type": "repeater",
@@ -22,7 +22,7 @@
             "button_label": "Add new slide",
             "sub_fields": [
                 {
-                    "key": "field_5f206eb66c6b6",
+                    "key": "field_5f3cb32c9b962",
                     "label": "Slide content",
                     "name": "slide_content",
                     "type": "wysiwyg",
@@ -41,7 +41,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_5f206ecc6c6b7",
+                    "key": "field_5f3cb32c9bd5e",
                     "label": "Read more text",
                     "name": "read_more_text",
                     "type": "textarea",
@@ -60,7 +60,7 @@
                     "new_lines": "wpautop"
                 },
                 {
-                    "key": "field_5f20832e49020",
+                    "key": "field_5f3cb32c9c11d",
                     "label": "Background image",
                     "name": "background_image",
                     "type": "image",
@@ -86,7 +86,29 @@
             ]
         },
         {
-            "key": "field_5f23e811ae729",
+            "key": "field_5f3cb3bf4a609",
+            "label": "Add slides from library",
+            "name": "slide_template",
+            "type": "post_object",
+            "instructions": "You can chose multiple slides and rearrange the order",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "master_slides"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5f3cb32ca42e9",
             "label": "Add a contact us slide",
             "name": "contact_us_slide",
             "type": "true_false",
@@ -132,5 +154,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1596407540
+    "modified": 1597821279
 }
