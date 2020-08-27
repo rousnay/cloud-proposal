@@ -34,13 +34,26 @@
 				<div id="bb-bookblock" class="bb-bookblock">
 
 
+
+					<div class="bb-item" id="slide-main">
+
+						<div class="container">
+							<h1 class="main-header" style="color:<?php the_field('color'); ?>"><?php the_field('heading'); ?></h1>
+							<?php the_field('content'); ?>
+						</div>
+
+					</div>
+
+
+
 					<?php if( have_rows('slides') ): ?>
 						<?php while( have_rows('slides') ): the_row(); ?>
 
 							<div class="bb-item" id="slide-<?php echo get_row_index(); ?>">
 
 								<div class="container">
-									<?php the_sub_field('slide_content'); ?>
+									<h1 class="main-header" style="color:<?php the_sub_field('color'); ?>"><?php the_sub_field('heading'); ?></h1>
+									<?php the_sub_field('content'); ?>
 
 									<div class="btn_readmore">read more</div>
 
@@ -88,6 +101,83 @@
 						<?php endif; ?>
 
 
+
+
+
+
+						<?php
+						if( get_field('add_pricing_table') == 'true' ): ?>
+
+
+							<div class="bb-item" id="slide-table">
+
+								<div class="container">
+									<h1 class="main-header">Pricing Table</h1>
+									<?php
+									$table = get_field( 'pricing_table' );
+
+									if ( ! empty ( $table ) ) {
+
+										echo '<table border="0">';
+
+										if ( ! empty( $table['caption'] ) ) {
+
+											echo '<caption>' . $table['caption'] . '</caption>';
+										}
+
+										if ( ! empty( $table['header'] ) ) {
+
+											echo '<thead>';
+
+											echo '<tr>';
+
+											foreach ( $table['header'] as $th ) {
+
+												echo '<th>';
+												echo $th['c'];
+												echo '</th>';
+											}
+
+											echo '</tr>';
+
+											echo '</thead>';
+										}
+
+										echo '<tbody>';
+
+										foreach ( $table['body'] as $tr ) {
+
+											echo '<tr>';
+
+											foreach ( $tr as $td ) {
+
+												echo '<td>';
+												echo $td['c'];
+												echo '</td>';
+											}
+
+											echo '</tr>';
+										}
+
+										echo '</tbody>';
+
+										echo '</table>';
+									}
+
+
+									?>
+
+								</div>
+							</div>
+
+						<?php endif;?>
+
+
+
+
+
+
+
 						<?php
 						if( get_field('contact_us_slide') == 'true' ) { ?>
 
@@ -111,79 +201,6 @@
 								</div>
 							</div>
 						<?php } endif;?>
-
-
-
-
-						<div class="bb-item" id="slide-table">
-
-							<div class="container">
-								<?php
-								$table = get_field( 'pricing_slide' );
-
-								if ( ! empty ( $table ) ) {
-
-									echo '<table border="0">';
-
-									if ( ! empty( $table['caption'] ) ) {
-
-										echo '<caption>' . $table['caption'] . '</caption>';
-									}
-
-									if ( ! empty( $table['header'] ) ) {
-
-										echo '<thead>';
-
-										echo '<tr>';
-
-										foreach ( $table['header'] as $th ) {
-
-											echo '<th>';
-											echo $th['c'];
-											echo '</th>';
-										}
-
-										echo '</tr>';
-
-										echo '</thead>';
-									}
-
-									echo '<tbody>';
-
-									foreach ( $table['body'] as $tr ) {
-
-										echo '<tr>';
-
-										foreach ( $tr as $td ) {
-
-											echo '<td>';
-											echo $td['c'];
-											echo '</td>';
-										}
-
-										echo '</tr>';
-									}
-
-									echo '</tbody>';
-
-									echo '</table>';
-								}
-
-
-								?>
-
-							</div>
-						</div>
-
-
-
-
-
-
-
-
-
-
 
 
 

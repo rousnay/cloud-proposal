@@ -24,11 +24,11 @@
             "label": "Heading",
             "name": "heading",
             "type": "text",
-            "instructions": "",
+            "instructions": "Give a title for this slide",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "75",
                 "class": "",
                 "id": ""
             },
@@ -39,9 +39,24 @@
             "maxlength": ""
         },
         {
+            "key": "field_5f47f7c98bc5b",
+            "label": "Color",
+            "name": "color",
+            "type": "color_picker",
+            "instructions": "Chose the color for heading",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#e21736"
+        },
+        {
             "key": "field_5f47e45e780b2",
-            "label": "Subtext",
-            "name": "subtext",
+            "label": "Content",
+            "name": "content",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -58,15 +73,39 @@
             "delay": 0
         },
         {
+            "key": "field_5f47fc35454f8",
+            "label": "Company Logo",
+            "name": "company_logo",
+            "type": "image",
+            "instructions": "Attache a logo of your company",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5f47e490780b3",
             "label": "Background image",
             "name": "background_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "Add a background image for this slide",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -122,11 +161,11 @@
                     "label": "Heading",
                     "name": "heading",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Give a title for this slide",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "75",
                         "class": "",
                         "id": ""
                     },
@@ -137,9 +176,24 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_5f47f911b71fe",
+                    "label": "Color",
+                    "name": "color",
+                    "type": "color_picker",
+                    "instructions": "Chose the color for heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#e21736"
+                },
+                {
                     "key": "field_5f3cb32c9b962",
-                    "label": "Subtext",
-                    "name": "Subtext",
+                    "label": "Content",
+                    "name": "content",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -329,5 +383,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1598549711
+    "modified": 1598553328
 }
