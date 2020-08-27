@@ -175,6 +175,20 @@ function cloud_proposal_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cloud_proposal_scripts' );
 
+
+/**
+ * Custom CSS and JS Code To WordPress Admin Panel
+ */
+
+function cloud_proposal_admin_scripts( $hook ) {
+  wp_enqueue_style(
+  'cloud-proposal-admin-custom-css', get_template_directory_uri() . '/css/admin-custom-style.css');
+
+  // wp_enqueue_script ( 'cloud-proposal-admin-custom-js', get_template_directory_uri() . '/js/admin-custom-script.js' );
+}
+add_action('admin_enqueue_scripts', 'cloud_proposal_admin_scripts');
+
+
 /**
  * Implement the Custom Header feature.
  */

@@ -58,13 +58,74 @@ function my_acf_json_load_point( $paths ) {
 
 //Add thumbnail to the post search in post object ACF field
 
+/*
+
+function my_acf_load_field( $field )
+{
+    global $post;
+    $field['slide_template'] = array();
+    wp_reset_query();
+    $query = new WP_Query(array(
+        'post_type' => 'master_slides',
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+        'posts_per_page' => -1,
+        ));
+    foreach($query->posts as $product_id=>$macthed_product){
+            $choices[$macthed_product->ID] = $macthed_product->post_title;
+    }
+    $field['slide_template'] = array();
+
+    if( is_array($slide_template) )
+    {
+        foreach( $choices as $key=>$choice )
+        {
+            $field['slide_template'][$key] = $choice;
+        }
+    }
+     wp_reset_query();
+    return $field;
+}
+add_filter('acf/load_field/name=slide_template', 'my_acf_load_field');
+
+
+
+
+
+
+function my_acf_field_checkbox( $field ){
+	
+	global $wpdb;
+	$querystr = "SELECT * FROM '$wpdb->posts' WHERE 'post_type' = 'master_slides'";
+	$my_cpts = $wpdb->get_results($querystr, OBJECT);
+
+	if($my_cpts){
+		$my_cpt_arr = array();
+		foreach($my_cpts as $my_cpt):
+			$my_cpt_arr[$my_cpt->ID] = $my_cpt->post_title;
+		endforeach;
+	}
+	$field['read_more_text'] = $my_cpt_arr;
+
+	return $field;
+};
+
+add_filter('acf/load_field/name=slide_template', 'my_acf_field_checkbox');
+
+*/
+
+
+
+
+
 add_filter('acf/fields/post_object/result', 'my_acf_fields_post_object_result', 10, 4);
 function my_acf_fields_post_object_result( $text, $post, $field, $post_id ) {
 
 	$post_thumbnail_url = get_the_post_thumbnail_url($post->ID);
-	$post_title = get_the_title( $post->ID );
+	$post_title = get_the_title($post->ID);
+	$post_link = get_permalink($post->ID);
 
-	$avatar = '<div class="post_ava_prefilter_wrapper" title="'.$post_title.'">';
+	$avatar = ' <a target="blank" class="slide_preview" href="'.$post_link.'">Preview</a><br><div class="post_ava_prefilter_wrapper">';
 	$avatar .= '<div class="ava_prefilter_wrapper"><img width="150" class="ava_square" src="'.$post_thumbnail_url.'" /></div>';
 	$avatar .= '</div>';
 

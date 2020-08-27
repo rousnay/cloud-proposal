@@ -3,6 +3,102 @@
     "title": "Proposals",
     "fields": [
         {
+            "key": "field_5f47deba528ab",
+            "label": "Main Slide",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f47e3726648f",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f47e45e780b2",
+            "label": "Subtext",
+            "name": "subtext",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5f47e490780b3",
+            "label": "Background image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f47e07b51661",
+            "label": "Secondary Slides",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5f3cb32c98e84",
             "label": "Slides",
             "name": "slides",
@@ -22,9 +118,28 @@
             "button_label": "Add new slide",
             "sub_fields": [
                 {
+                    "key": "field_5f47e50e20896",
+                    "label": "Heading",
+                    "name": "heading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5f3cb32c9b962",
-                    "label": "Slide content",
-                    "name": "slide_content",
+                    "label": "Subtext",
+                    "name": "Subtext",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -73,7 +188,7 @@
                         "id": ""
                     },
                     "return_format": "url",
-                    "preview_size": "full",
+                    "preview_size": "thumbnail",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -86,8 +201,25 @@
             ]
         },
         {
+            "key": "field_5f47e1ce1bf6d",
+            "label": "Additional Slides",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5f3cb3bf4a609",
-            "label": "Add slides from library",
+            "label": "Add slides from the library",
             "name": "slide_template",
             "type": "post_object",
             "instructions": "You can chose multiple slides and rearrange the order",
@@ -106,6 +238,49 @@
             "multiple": 1,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5f47e6b15deee",
+            "label": "Add a pricing table",
+            "name": "add_pricing_table",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "If you wish to make a 'contact us' slide based on the information you provided in the user profile section",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_5f47e8cbce8e2",
+            "label": "Pricing table",
+            "name": "pricing_table",
+            "type": "table",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f47e6b15deee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "use_header": 1,
+            "use_caption": 1
         },
         {
             "key": "field_5f3cb32ca42e9",
@@ -154,5 +329,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1597821279
+    "modified": 1598549711
 }
