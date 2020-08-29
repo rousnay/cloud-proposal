@@ -109,3 +109,21 @@ function remove_menus_for_editor(){
 if ( !current_user_can( 'administrator' ) ){
     add_action( 'admin_menu', 'remove_menus_for_editor' );
 }
+
+
+/***************************************************
+ * Hide Specific plugin from installed plugin list
+****************************************************/
+
+function secret_plugin_webcusp() {
+	global $wp_list_table;
+	$hidearr = array('advanced-custom-fields-table-field/acf-table.php');
+	$myplugins = $wp_list_table->items;
+	foreach ($myplugins as $key => $val) {
+		if (in_array($key,$hidearr)) {
+			unset($wp_list_table->items[$key]);
+		}
+	}
+}
+
+add_action('pre_current_active_plugins', 'secret_plugin_webcusp');
