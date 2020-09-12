@@ -45,6 +45,26 @@
 					</div>
 
 
+					<?php if( get_field('heading_1') ): ?>
+
+						<div class="bb-item" id="first-slide">
+
+							<div class="container">
+								<h1 class="main-header" style="color:<?php the_field('color_1'); ?>"><?php the_field('heading_1'); ?></h1>
+								<?php the_field('content_1'); ?>
+
+								<div class="btn_readmore">read more</div>
+
+								<div class="block_readmore">
+									<div class="block_readmore_inner">
+										<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+										<?php the_field('read_more_text_1'); ?>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					<?php endif; ?>
 
 					<?php if( have_rows('slides') ): ?>
 						<?php while( have_rows('slides') ): the_row(); ?>
@@ -67,171 +87,159 @@
 								</div>
 							</div>
 						<?php endwhile; ?>
+					<?php endif; ?>
 
 
-						<?php $master_slides = get_field('slide_template');
-						if( $master_slides ): ?>
-							<?php foreach( $master_slides as $key=>$post ): 
+					<?php $master_slides = get_field('slide_template');
+					if( $master_slides ): ?>
+						<?php foreach( $master_slides as $key=>$post ): 
 
 						        // Setup this post for WP functions (variable must be named $post).
-								setup_postdata($post); ?>
+							setup_postdata($post); ?>
 
-								<div class="bb-item" id="slide-template-<?php echo $key ?>">
-
-									<div class="container">
-
-										<p><?php the_content(); ?></p>
-
-										<div class="btn_readmore">read more</div>
-
-										<div class="block_readmore">
-											<div class="block_readmore_inner">
-												<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
-												<?php the_field('read_more_text'); ?>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-							<?php endforeach; ?>
-							<?php 
-					    // Reset the global post object so that the rest of the page works correctly.
-							wp_reset_postdata(); ?>
-						<?php endif; ?>
-
-
-
-
-
-
-						<?php
-						if( get_field('add_pricing_table') == 'true' ): ?>
-
-
-							<div class="bb-item" id="slide-table">
+							<div class="bb-item" id="slide-template-<?php echo $key ?>">
 
 								<div class="container">
-									<h1 class="main-header">Pricing Table</h1>
-									<?php
-									$table = get_field( 'pricing_table' );
 
-									if ( ! empty ( $table ) ) {
+									<p><?php the_content(); ?></p>
 
-										echo '<table border="0">';
+									<div class="btn_readmore">read more</div>
 
-										if ( ! empty( $table['caption'] ) ) {
+									<div class="block_readmore">
+										<div class="block_readmore_inner">
+											<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+											<?php the_field('read_more_text'); ?>
+										</div>
+									</div>
 
-											echo '<caption>' . $table['caption'] . '</caption>';
-										}
+								</div>
+							</div>
 
-										if ( ! empty( $table['header'] ) ) {
+						<?php endforeach; ?>
+						<?php 
+					    // Reset the global post object so that the rest of the page works correctly.
+						wp_reset_postdata(); ?>
+					<?php endif; ?>
 
-											echo '<thead>';
 
-											echo '<tr>';
 
-											foreach ( $table['header'] as $th ) {
 
-												echo '<th>';
-												echo $th['c'];
-												echo '</th>';
-											}
+					<?php
+					if( get_field('add_pricing_table') == 'true' ): ?>
 
-											echo '</tr>';
 
-											echo '</thead>';
-										}
+						<div class="bb-item" id="slide-table">
 
-										echo '<tbody>';
+							<div class="container">
+								<h1 class="main-header">Pricing Table</h1>
+								<?php
+								$table = get_field( 'pricing_table' );
 
-										foreach ( $table['body'] as $tr ) {
+								if ( ! empty ( $table ) ) {
 
-											echo '<tr>';
+									echo '<table border="0">';
 
-											foreach ( $tr as $td ) {
+									if ( ! empty( $table['caption'] ) ) {
 
-												echo '<td>';
-												echo $td['c'];
-												echo '</td>';
-											}
-
-											echo '</tr>';
-										}
-
-										echo '</tbody>';
-
-										echo '</table>';
+										echo '<caption>' . $table['caption'] . '</caption>';
 									}
 
+									if ( ! empty( $table['header'] ) ) {
 
-									?>
+										echo '<thead>';
 
-								</div>
+										echo '<tr>';
+
+										foreach ( $table['header'] as $th ) {
+
+											echo '<th>';
+											echo $th['c'];
+											echo '</th>';
+										}
+
+										echo '</tr>';
+
+										echo '</thead>';
+									}
+
+									echo '<tbody>';
+
+									foreach ( $table['body'] as $tr ) {
+
+										echo '<tr>';
+
+										foreach ( $tr as $td ) {
+
+											echo '<td>';
+											echo $td['c'];
+											echo '</td>';
+										}
+
+										echo '</tr>';
+									}
+
+									echo '</tbody>';
+
+									echo '</table>';
+								}
+
+
+								?>
+
 							</div>
+						</div>
 
-						<?php endif;?>
-
-
-
+					<?php endif;?>
 
 
 
 
-						<?php
-						if( get_field('contact_us_slide') == 'true' ) { ?>
 
-							<div class="bb-item" id="slide-contact">
+					<?php
+					if( get_field('contact_us_slide') == 'true' ) : ?>
 
-								<div class="container">
+						<div class="bb-item" id="slide-contact">
+
+							<div class="container">
 
 
-									<h1 class="main-header">Contact Us</h1>
-									<h1><?php the_field('company_name', 'user_'.$author_id) ?></h1>
+								<h1 class="main-header">Contact Us</h1>
+								<h1><?php the_field('company_name', 'user_'.$author_id) ?></h1>
 
-									<img width="150px" src="<?php the_field('company_logo', 'user_'.$author_id) ?>" alt="">
+								<img width="150px" src="<?php the_field('company_logo', 'user_'.$author_id) ?>" alt="">
 
-									<ul class="proposal-address">
-										<li><?php the_field('phone_number', 'user_'.$author_id) ?></li>
-										<li><?php the_field('business_email', 'user_'.$author_id) ?></li>
-										<li><?php the_field('address_line_1', 'user_'.$author_id) ?></li>
-										<li><?php the_field('address_line_2', 'user_'.$author_id) ?></li>
-										<li><?php the_field('website', 'user_'.$author_id) ?></li>
-									</ul>	
-								</div>
+								<ul class="proposal-address">
+									<li><?php the_field('phone_number', 'user_'.$author_id) ?></li>
+									<li><?php the_field('business_email', 'user_'.$author_id) ?></li>
+									<li><?php the_field('address_line_1', 'user_'.$author_id) ?></li>
+									<li><?php the_field('address_line_2', 'user_'.$author_id) ?></li>
+									<li><?php the_field('website', 'user_'.$author_id) ?></li>
+								</ul>	
 							</div>
-						<?php } endif;?>
+						</div>
+					<?php endif;?>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-					</div>
 
 				</div>
 
-				<!-- </div> -->
+			</div>
 
-				<nav class="arrow">
+			<!-- </div> -->
 
-					<a id="bb-nav-prev" href="#" class="btn_prev">Previous</a>
+			<nav class="arrow">
 
-					<a id="bb-nav-next" href="#" class="btn_next">Next</a>
+				<a id="bb-nav-prev" href="#" class="btn_prev">Previous</a>
 
-				</nav>
+				<a id="bb-nav-next" href="#" class="btn_next">Next</a>
 
-			</main><!-- #main -->
+			</nav>
+
+		</main><!-- #main -->
 
 
-			<?php
-			get_sidebar();
-			get_footer();
+		<?php
+		get_sidebar();
+		get_footer();

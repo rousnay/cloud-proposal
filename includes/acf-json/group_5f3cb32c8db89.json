@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5f47deba528ab",
-            "label": "Main Slide",
+            "label": "Welcome Slide",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -21,7 +21,7 @@
         },
         {
             "key": "field_5f47e3726648f",
-            "label": "Heading",
+            "label": "Slide main title",
             "name": "heading",
             "type": "text",
             "instructions": "Give a title for this slide",
@@ -74,7 +74,7 @@
         },
         {
             "key": "field_5f47fc35454f8",
-            "label": "Company Logo",
+            "label": "Company logo",
             "name": "company_logo",
             "type": "image",
             "instructions": "Attache a logo of your company",
@@ -122,7 +122,7 @@
         },
         {
             "key": "field_5f47e07b51661",
-            "label": "Secondary Slides",
+            "label": "Exact Summary Slides",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -138,8 +138,104 @@
             "endpoint": 0
         },
         {
+            "key": "field_5f57708580edb",
+            "label": "Slide main title",
+            "name": "heading_1",
+            "type": "text",
+            "instructions": "Give a title for this slide",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f5770a380edc",
+            "label": "Color",
+            "name": "color_1",
+            "type": "color_picker",
+            "instructions": "Chose the color for heading",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#e21736"
+        },
+        {
+            "key": "field_5f5770d380edd",
+            "label": "Content",
+            "name": "content_1",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5f5770db80ede",
+            "label": "Read more text",
+            "name": "read_more_text_1",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5f5770e180edf",
+            "label": "Background image",
+            "name": "background_image_1",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5f3cb32c98e84",
-            "label": "Slides",
+            "label": "Additional Slides",
             "name": "slides",
             "type": "repeater",
             "instructions": "Add slides as much as needed",
@@ -158,7 +254,7 @@
             "sub_fields": [
                 {
                     "key": "field_5f47e50e20896",
-                    "label": "Heading",
+                    "label": "Slide main title",
                     "name": "heading",
                     "type": "text",
                     "instructions": "Give a title for this slide",
@@ -256,7 +352,7 @@
         },
         {
             "key": "field_5f47e1ce1bf6d",
-            "label": "Additional Slides",
+            "label": "Slide Library",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -292,6 +388,23 @@
             "multiple": 1,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5f576f3000f7f",
+            "label": "Pricing Table",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
         },
         {
             "key": "field_5f47e6b15deee",
@@ -335,6 +448,23 @@
             },
             "use_header": 1,
             "use_caption": 1
+        },
+        {
+            "key": "field_5f576fe4b7824",
+            "label": "Contact Slide",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
         },
         {
             "key": "field_5f3cb32ca42e9",
@@ -383,5 +513,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1598553328
+    "modified": 1599568915
 }
