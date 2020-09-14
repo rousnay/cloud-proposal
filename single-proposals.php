@@ -40,7 +40,7 @@
 							<div class="slider-overlay">
 								<div class="container">
 									<div class="header"><img src="<?php the_field('company_logo_main'); ?>"></div>
-									<h1 class="main-header" style="color:<?php the_field('color'); ?>"><?php the_field('heading_main'); ?></h1>
+									<h1 class="main-header" style="color:<?php the_field('color_main'); ?>"><?php the_field('heading_main'); ?></h1>
 									<?php the_field('content_main'); ?>
 								</div>
 							</div>
