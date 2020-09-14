@@ -25,10 +25,57 @@
 	global $post;
 	$author_id = $post->post_author;							 
 	?>
+
+	<?php $master_slides = get_field('slide_template');?>
+
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cloud-proposal' ); ?></a>
 
 		<main id="primary" class="site-main">
+
+
+
+			<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+
+			<label for="openSidebarMenu" class="sidebarIconToggle">
+				<div class="spinner diagonal part-1"></div>
+				<div class="spinner horizontal"></div>
+				<div class="spinner diagonal part-2"></div>
+			</label>
+
+			<div id="sidebarMenu">
+				<ul class="sidebarMenuInner">
+					<li><?php the_title(); ?> <span>Proposal</span></li>
+					<li><a href="#slide-main"><?php the_field('heading_main'); ?></a></li>
+					<?php if( get_field('heading_1') ): ?>
+						<li><a href="#first-slide"></a><?php the_field('heading_1'); ?></li>
+					<?php endif; ?>
+					<?php if( have_rows('slides') ): ?>
+						<?php while( have_rows('slides') ): the_row(); ?>
+							<li><a href="#slide-<?php echo get_row_index(); ?>"><?php the_sub_field('heading'); ?></a></li>
+						<?php endwhile; ?>
+					<?php endif; ?>
+
+					<?php if( $master_slides ): ?>
+						<?php foreach( $master_slides as $key=>$post ): 
+							setup_postdata($post); ?>
+
+							<li><a href="#slide-template-<?php echo $key ?>"><?php the_title(); ?></a></li>
+
+						<?php endforeach; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+					<?php
+					if( get_field('add_pricing_table') == 'true' ): ?>
+						<li><a href="#slide-table">Pricing Table</a></li>
+					<?php endif; ?>
+					<?php
+					if( get_field('contact_us_slide') == 'true' ) : ?>
+						<li><a href="#slide-contact">Contact Us</a></li>
+					<?php endif; ?>
+				</ul>
+			</div>
+
 
 			<div class="proposal-slider">
 				<div id="bb-bookblock" class="bb-bookblock">
@@ -97,8 +144,8 @@
 					<?php endif; ?>
 
 
-					<?php $master_slides = get_field('slide_template');
-					if( $master_slides ): ?>
+					
+					<?php if( $master_slides ): ?>
 						<?php foreach( $master_slides as $key=>$post ): 
 
 						        // Setup this post for WP functions (variable must be named $post).
