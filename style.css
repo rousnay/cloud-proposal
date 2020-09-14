@@ -1009,12 +1009,13 @@ body, html, #page, main, .container {
 }
 .sidebarMenuInner li{
     list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 20px;
-    cursor: pointer;
+    padding: 10px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li.prop-name{
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 .sidebarMenuInner li span{
     display: block;
@@ -1023,8 +1024,6 @@ body, html, #page, main, .container {
 }
 .sidebarMenuInner li a{
     color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
     cursor: pointer;
     text-decoration: none;
 }

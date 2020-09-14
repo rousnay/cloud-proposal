@@ -45,11 +45,13 @@
 
 			<div id="sidebarMenu">
 				<ul class="sidebarMenuInner">
-					<li><?php the_title(); ?> <span>Proposal</span></li>
+					<li class="prop-name"><?php the_title(); ?> <span>Proposal</span></li>
 					<li><a href="#slide-main"><?php the_field('heading_main'); ?></a></li>
+
 					<?php if( get_field('heading_1') ): ?>
-						<li><a href="#first-slide"></a><?php the_field('heading_1'); ?></li>
+						<li><a href="#first-slide"><?php the_field('heading_1'); ?></a></li>
 					<?php endif; ?>
+
 					<?php if( have_rows('slides') ): ?>
 						<?php while( have_rows('slides') ): the_row(); ?>
 							<li><a href="#slide-<?php echo get_row_index(); ?>"><?php the_sub_field('heading'); ?></a></li>
@@ -65,10 +67,12 @@
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 					<?php endif; ?>
+
 					<?php
 					if( get_field('add_pricing_table') == 'true' ): ?>
 						<li><a href="#slide-table">Pricing Table</a></li>
 					<?php endif; ?>
+
 					<?php
 					if( get_field('contact_us_slide') == 'true' ) : ?>
 						<li><a href="#slide-contact">Contact Us</a></li>
