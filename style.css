@@ -1177,11 +1177,31 @@ body {
     line-height:23px;
 }
 
+.slider-inner{
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+}
+.slider-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.60);
+}
 section{
     background-size: cover;
 }
 .section-title {
     display: none;
+}
+.header {
+    height: 85px;
+}
+.header img {
+    height: 100%;
+    padding-top: 15px;
 }
 h1.main-header {
     font-size: 75px;

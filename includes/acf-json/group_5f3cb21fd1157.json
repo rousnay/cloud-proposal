@@ -34,7 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "url",
             "preview_size": "full",
             "library": "all",
             "min_width": "",
@@ -72,5 +72,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1597820813
+    "modified": 1600084914
 }

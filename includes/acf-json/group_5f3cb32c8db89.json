@@ -22,7 +22,7 @@
         {
             "key": "field_5f47e3726648f",
             "label": "Slide main title",
-            "name": "heading",
+            "name": "heading_main",
             "type": "text",
             "instructions": "Give a title for this slide",
             "required": 1,
@@ -41,7 +41,7 @@
         {
             "key": "field_5f47f7c98bc5b",
             "label": "Color",
-            "name": "color",
+            "name": "color_main",
             "type": "color_picker",
             "instructions": "Chose the color for heading",
             "required": 0,
@@ -56,7 +56,7 @@
         {
             "key": "field_5f47e45e780b2",
             "label": "Content",
-            "name": "content",
+            "name": "content_main",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -75,7 +75,7 @@
         {
             "key": "field_5f47fc35454f8",
             "label": "Company logo",
-            "name": "company_logo",
+            "name": "company_logo_main",
             "type": "image",
             "instructions": "Attache a logo of your company",
             "required": 0,
@@ -99,7 +99,7 @@
         {
             "key": "field_5f47e490780b3",
             "label": "Background image",
-            "name": "background_image",
+            "name": "background_image_main",
             "type": "image",
             "instructions": "Add a background image for this slide",
             "required": 0,
@@ -513,5 +513,5 @@
     ],
     "active": 1,
     "description": "Proposal slides",
-    "modified": 1599568915
+    "modified": 1600084577
 }

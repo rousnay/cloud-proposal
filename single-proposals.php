@@ -36,34 +36,38 @@
 
 
 					<div class="bb-item" id="slide-main">
-
-						<div class="container">
-							<div class="main-header"><img src="<?php the_field('company_logo'); ?>"></div>
-							<h1 class="main-header" style="color:<?php the_field('color'); ?>"><?php the_field('heading'); ?></h1>
-							<?php the_field('content'); ?>
+						<div class="slider-inner" style="background-image: url(<?php the_field('background_image_main');?>);">
+							<div class="slider-overlay">
+								<div class="container">
+									<div class="header"><img src="<?php the_field('company_logo_main'); ?>"></div>
+									<h1 class="main-header" style="color:<?php the_field('color'); ?>"><?php the_field('heading_main'); ?></h1>
+									<?php the_field('content_main'); ?>
+								</div>
+							</div>
 						</div>
-
 					</div>
 
 
 					<?php if( get_field('heading_1') ): ?>
 
 						<div class="bb-item" id="first-slide">
+							<div class="slider-inner" style="background-image: url(<?php the_field('background_image_1');?>);">
+								<div class="slider-overlay">
+									<div class="container">
+										<h1 class="main-header" style="color:<?php the_field('color_1'); ?>"><?php the_field('heading_1'); ?></h1>
+										<?php the_field('content_1'); ?>
 
-							<div class="container">
-								<h1 class="main-header" style="color:<?php the_field('color_1'); ?>"><?php the_field('heading_1'); ?></h1>
-								<?php the_field('content_1'); ?>
+										<div class="btn_readmore">read more</div>
 
-								<div class="btn_readmore">read more</div>
-
-								<div class="block_readmore">
-									<div class="block_readmore_inner">
-										<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
-										<?php the_field('read_more_text_1'); ?>
+										<div class="block_readmore">
+											<div class="block_readmore_inner">
+												<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+												<?php the_field('read_more_text_1'); ?>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-
 						</div>
 					<?php endif; ?>
 
@@ -71,20 +75,22 @@
 						<?php while( have_rows('slides') ): the_row(); ?>
 
 							<div class="bb-item" id="slide-<?php echo get_row_index(); ?>">
+								<div class="slider-inner" style="background-image: url(<?php the_sub_field('background_image');?>);">
+									<div class="slider-overlay">
+										<div class="container">
+											<h1 class="main-header" style="color:<?php the_sub_field('color'); ?>"><?php the_sub_field('heading'); ?></h1>
+											<?php the_sub_field('content'); ?>
 
-								<div class="container">
-									<h1 class="main-header" style="color:<?php the_sub_field('color'); ?>"><?php the_sub_field('heading'); ?></h1>
-									<?php the_sub_field('content'); ?>
+											<div class="btn_readmore">read more</div>
 
-									<div class="btn_readmore">read more</div>
-
-									<div class="block_readmore">
-										<div class="block_readmore_inner">
-											<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
-											<?php the_sub_field('read_more_text'); ?>
+											<div class="block_readmore">
+												<div class="block_readmore_inner">
+													<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+													<?php the_sub_field('read_more_text'); ?>
+												</div>
+											</div>
 										</div>
 									</div>
-									
 								</div>
 							</div>
 						<?php endwhile; ?>
@@ -99,20 +105,21 @@
 							setup_postdata($post); ?>
 
 							<div class="bb-item" id="slide-template-<?php echo $key ?>">
+								<div class="slider-inner" style="background-image: url(<?php the_field('background_image');?>);">
+									<div class="slider-overlay">
+										<div class="container">
+											<p><?php the_content(); ?></p>
 
-								<div class="container">
+											<div class="btn_readmore">read more</div>
 
-									<p><?php the_content(); ?></p>
-
-									<div class="btn_readmore">read more</div>
-
-									<div class="block_readmore">
-										<div class="block_readmore_inner">
-											<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
-											<?php the_field('read_more_text'); ?>
+											<div class="block_readmore">
+												<div class="block_readmore_inner">
+													<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#">Close</a>
+													<?php the_field('read_more_text'); ?>
+												</div>
+											</div>
 										</div>
 									</div>
-
 								</div>
 							</div>
 
