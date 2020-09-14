@@ -38,7 +38,7 @@
 					<div class="bb-item" id="slide-main">
 
 						<div class="container">
-							<div class="main-header"><img src="<?php //the_field('company_logo'); ?>"></div>
+							<div class="main-header"><img src="<?php the_field('company_logo'); ?>"></div>
 							<h1 class="main-header" style="color:<?php the_field('color'); ?>"><?php the_field('heading'); ?></h1>
 							<?php the_field('content'); ?>
 						</div>
