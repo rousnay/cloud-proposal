@@ -133,14 +133,26 @@
 		if( current === 0 ) {
 			$navNext.show();
 			$navPrev.hide();
+
+			$navNext.addClass("animate-surf-hint");
+			$navPrev.removeClass("animate-surf-hint");
+
+
+
 		}
 		else if( isLastPage ) {
 			$navNext.hide();
 			$navPrev.show();
+
+			$navNext.removeClass("animate-surf-hint");
+			$navPrev.addClass("animate-surf-hint");
 		}
 		else {
 			$navNext.show();
 			$navPrev.show();
+
+			$navNext.removeClass("animate-surf-hint");
+			$navPrev.removeClass("animate-surf-hint");
 		}
 
 	}

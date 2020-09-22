@@ -328,9 +328,9 @@
 
 					</div>
 
-					<nav class="arrowX">
-						<span id="bb-nav-next">&rarr;</span>
-						<span id="bb-nav-prev">&larr;</span>
+					<nav class="arrow">
+						<span id="bb-nav-next" class="animate-surf-hint"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></span>
+						<span id="bb-nav-prev"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></span>
 
 					</nav>
 					<span id="tblcontents" class="menu-button">Table of Contents</span>
