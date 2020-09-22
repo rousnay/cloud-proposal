@@ -1190,6 +1190,14 @@ textarea {
 	font-weight: 500;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Good Headline Pro X Cond Black';
+	src: url('fonts/GoodHeadlinePro-XCondBlack.otf') format('OpenType');
+	font-weight: 500;
+	font-style: normal;
+}
+
 @font-face {
 	font-family: 'Good Headline Pro';
 	src: url('fonts/GoodHeadlinePro-Medium.otf') format('OpenType');
@@ -1483,7 +1491,7 @@ section{
 }
 h1.main-header {
 	font-size: 5em;
-	font-family: 'Good Head Offc Pro X Cond', sans-serif!important;
+	font-family: 'Good Headline Pro X Cond Black', sans-serif!important;
 	text-transform: capitalize;
 	font-weight: 900;
 	line-height: .9;
