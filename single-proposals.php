@@ -148,7 +148,7 @@
 									<div class="content">
 										<div class="scroller">
 
-											<div class="container"><.
+											<div class="container">
 												<h1 class="main-header" style="color:<?php the_sub_field('color'); ?>"><?php the_sub_field('heading'); ?></h1>
 												<?php the_sub_field('content'); ?>
 
