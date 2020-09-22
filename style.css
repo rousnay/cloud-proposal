@@ -1040,7 +1040,7 @@ textarea {
 	display: block;
 	color: #34495e;
 	font-size: 1.1em;
-	line-height: 2;
+	/*line-height: 2;*/
 	padding: 10px 20px;
 	cursor: pointer;
 	background: white;
