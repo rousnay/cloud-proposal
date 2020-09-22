@@ -1492,7 +1492,7 @@ section{
 h1.main-header {
 	font-size: 5em;
 	font-family: 'Good Headline Pro X Cond Black', sans-serif!important;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	font-weight: 900;
 	line-height: .9;
 	color: #e21736;
