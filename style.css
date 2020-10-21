@@ -1313,6 +1313,9 @@ header {
     z-index: 9999;
 }
 
+header hr{
+	width: calc(100vw - 40px);
+}
 img.cdw-logo {
     width: 65px;
     margin-left: 20px;
