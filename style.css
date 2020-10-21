@@ -1469,8 +1469,10 @@ img.cdw-logo {
 }
 
 .logo-custom {
+	text-align: right;
+}
+.logo-custom img {
     max-width: 200px;
-    float: right;
 }
 /*customization*/
 

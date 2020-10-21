@@ -123,8 +123,6 @@
 											<h1 class="main-header" style="color:<?php the_field('color_1'); ?>"><?php the_field('heading_1'); ?></h1>
 											<?php the_field('content_1'); ?>
 
-											<div class="logo-custom"><img src="<?php the_field('company_logo_main'); ?>"></div>
-
 											<!-- <div class="btn_readmore"><i class="fa fa-arrow-down" aria-hidden="true"></i></div> -->
 
 											<?php if( get_field('read_more_text_1') ): ?>
@@ -140,8 +138,11 @@
 												</div>
 
 											<?php endif; ?>
-											
+
 										</div>
+
+										<div class="logo-custom"><img src="<?php the_field('company_logo_main'); ?>"></div>
+
 									</div>
 								</div>
 							</div>
