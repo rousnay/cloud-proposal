@@ -37,7 +37,7 @@
 					<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png"><!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
 
 				</div>
-				<div class="col">
+				
 					<div class="menu-panel">
 						<h3><?php the_title(); ?> <span>Proposal</span></h3>
 						<ul id="menu-toc" class="menu-toc">
@@ -75,7 +75,7 @@
 
 						</ul>
 					</div>
-				</div>
+				
 			</div>
 		</header>
 
