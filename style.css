@@ -1305,6 +1305,14 @@ a, a:hover {
 	outline: none;
 }
 
+header{
+	padding: 20px 0;
+}
+img.cdw-logo {
+    width: 65px;
+    margin-left: 20px;
+}
+
 .proposal-slider {
 	margin: 0 auto;
 	display: block;

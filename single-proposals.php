@@ -28,69 +28,56 @@
 
 	<?php $master_slides = get_field('slide_template');?>
 
-	<header> 
-		<div class="row">
-			<div class="col">
-				<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png"><!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
-
-			</div>
-		</div>
-		
-
-		
-	</header>
-
-
-
-
 	<main id="primary" class="site-main">
 
 
+		<header> 
+			<div class="row">
+				<div class="col">
+					<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png"><!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
 
+				</div>
+				<div class="col">
+					<div class="menu-panel">
+						<h3><?php the_title(); ?> <span>Proposal</span></h3>
+						<ul id="menu-toc" class="menu-toc">
 
+							<li class="menu-toc-current"><a href="#slide-main"><?php the_field('heading_main'); ?></a></li>
+							<?php if( get_field('heading_1') ): ?>
+								<li><a href="#first-slide"><?php the_field('heading_1'); ?></a></li>
+							<?php endif; ?>
 
-		<div class="menu-panel">
-			<h3><?php the_title(); ?> <span>Proposal</span></h3>
-			<ul id="menu-toc" class="menu-toc">
+							<?php if( have_rows('slides') ): ?>
+								<?php while( have_rows('slides') ): the_row(); ?>
+									<li><a href="#slide-<?php echo get_row_index(); ?>"><?php the_sub_field('heading'); ?></a></li>
+								<?php endwhile; ?>
+							<?php endif; ?>
 
-				<li class="menu-toc-current"><a href="#slide-main"><?php the_field('heading_main'); ?></a></li>
-				<?php if( get_field('heading_1') ): ?>
-					<li><a href="#first-slide"><?php the_field('heading_1'); ?></a></li>
-				<?php endif; ?>
+							<?php if( $master_slides ): ?>
+								<?php foreach( $master_slides as $key=>$post ): 
+									setup_postdata($post); ?>
 
-				<?php if( have_rows('slides') ): ?>
-					<?php while( have_rows('slides') ): the_row(); ?>
-						<li><a href="#slide-<?php echo get_row_index(); ?>"><?php the_sub_field('heading'); ?></a></li>
-					<?php endwhile; ?>
-				<?php endif; ?>
+									<li><a href="#slide-template-<?php echo $key ?>"><?php the_title(); ?></a></li>
 
-				<?php if( $master_slides ): ?>
-					<?php foreach( $master_slides as $key=>$post ): 
-						setup_postdata($post); ?>
+								<?php endforeach; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 
-						<li><a href="#slide-template-<?php echo $key ?>"><?php the_title(); ?></a></li>
+							<?php
+							if( get_field('add_pricing_table') == 'true' ): ?>
+								<li><a href="#slide-table">Pricing Table</a></li>
+							<?php endif; ?>
 
-					<?php endforeach; ?>
-					<?php wp_reset_postdata(); ?>
-				<?php endif; ?>
+							<?php
+							if( get_field('contact_us_slide') == 'true' ) : ?>
+								<li><a href="#slide-contact">Contact Us</a></li>
+							<?php endif; ?>
 
-				<?php
-				if( get_field('add_pricing_table') == 'true' ): ?>
-					<li><a href="#slide-table">Pricing Table</a></li>
-				<?php endif; ?>
-
-				<?php
-				if( get_field('contact_us_slide') == 'true' ) : ?>
-					<li><a href="#slide-contact">Contact Us</a></li>
-				<?php endif; ?>
-
-			</ul>
-		</div>
-
-
-
-
-
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
 
 
 		<div class="bb-custom-wrapper proposal-slider">
