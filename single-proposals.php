@@ -35,7 +35,7 @@
 			<div class="row">
 				<div class="col">
 					<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png"><!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
-
+					<hr>
 				</div>
 				
 					<div class="menu-panel">
