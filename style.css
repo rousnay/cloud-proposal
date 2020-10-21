@@ -1484,7 +1484,6 @@ img.cdw-logo {
 .slider-inner{
 	height: 100%;
 	width: 100%;
-    top: 105px;
 	position: absolute;
 	background-size: cover;
 	background-position: center center;
@@ -1496,6 +1495,12 @@ img.cdw-logo {
 	width: 100%;
 	background-color: rgba(255,255,255,0.60);
 }
+
+
+.slider-inner .content{
+    padding-top: 105px;
+}
+
 section{
 	background-size: cover;
 }
