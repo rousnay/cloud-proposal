@@ -29,7 +29,11 @@
 	<?php $master_slides = get_field('slide_template');?>
 
 
-	<main id="primary" class="site-main">
+
+
+
+
+
 
 		<div class="menu-panel">
 			<h3><?php the_title(); ?> <span>Proposal</span></h3>
@@ -68,6 +72,24 @@
 
 			</ul>
 		</div>
+
+	<main id="primary" class="site-main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		<div class="bb-custom-wrapper proposal-slider">
