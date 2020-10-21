@@ -29,10 +29,15 @@
 	<?php $master_slides = get_field('slide_template');?>
 
 	<header> 
-		<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png">
+		<div class="row">
+			<div class="col-xs-12">
+				<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png"><!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
 
-		<!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
+			</div>
+		</div>
+		
 
+		
 	</header>
 
 
