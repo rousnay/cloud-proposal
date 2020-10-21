@@ -28,8 +28,17 @@
 
 	<?php $master_slides = get_field('slide_template');?>
 
+	<header> 
+		<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png">
+
+		<!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
+
+	</header>
 
 
+
+
+	<main id="primary" class="site-main">
 
 
 
@@ -72,19 +81,6 @@
 
 			</ul>
 		</div>
-
-	<main id="primary" class="site-main">
-
-
-
-
-
-
-
-
-
-
-
 
 
 
