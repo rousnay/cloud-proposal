@@ -1034,8 +1034,9 @@ textarea {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+    height: 100vh;
+    background-color: darkgrey;
 }
-
 .menu-toc li a {
 	display: block;
 	color: #34495e;
@@ -1113,7 +1114,7 @@ textarea {
 .menu-button {
 	z-index: 9999;
 	right: 20px;
-	top: 20px;
+	top: 35px;
 	text-indent: -9000px;
 }
 
@@ -1121,12 +1122,12 @@ textarea {
 	position: absolute;
 	content: '';
 	width: 50%;
-	height: 2px;
+	height: 3px;
 	background: #999;
 	top: 50%;
 	margin-top: -1px;
 	left: 25%;
-	box-shadow: 0 -7px #999, 0 7px #999;
+	box-shadow: 0 -10px #999, 0 10px #999;
 }
 
 .no-js .bb-custom-wrapper nav span,
