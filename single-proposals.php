@@ -115,17 +115,19 @@
 
 											<!-- <div class="btn_readmore"><i class="fa fa-arrow-down" aria-hidden="true"></i></div> -->
 
+											<?php if( get_field('read_more_text_1') ): ?>
+												<div class="btn_readmore">read more</div>
 
-											<div class="btn_readmore">read more</div>
-
-											<div class="block_readmore">
-												<div class="block_readmore_inner">
-													<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#"></a>
-													<div class="container">
-														<?php the_field('read_more_text_1'); ?>
+												<div class="block_readmore">
+													<div class="block_readmore_inner">
+														<a id="readmore-close" class="fa fa-angle-down read_close_cdw" href="#"></a>
+														<div class="container">
+															<?php the_field('read_more_text_1'); ?>
+														</div>
 													</div>
 												</div>
-											</div>
+
+											<?php endif; ?>
 										</div>
 
 
