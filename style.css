@@ -1631,12 +1631,15 @@ h1.main-header.has-text-align-center{
 }
 
 
-
+li.li-print {
+    text-align: center;
+}
 li.li-print a {
     width: 50%;
     margin: auto;
     background: #e21736;
     color: white;
+    border: none;
 }
 
 @media print {
