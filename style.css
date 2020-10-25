@@ -1145,7 +1145,7 @@ textarea {
 }
 
 .scroller {
-	padding: 10px 5% 10px 5%;
+	padding: 10px;
 }
 
 
@@ -1473,6 +1473,7 @@ img.cdw-logo {
 
 .logo-custom {
 	text-align: right;
+	padding-right: 5%;
 }
 .logo-custom img {
     max-width: 200px;
