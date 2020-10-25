@@ -73,6 +73,9 @@
 							<li><a href="#slide-contact">Contact Us</a></li>
 						<?php endif; ?>
 
+						<br>
+						<li class="li-print"><a href="" onclick="window.print();">Print this Proposal</a></li>
+
 					</ul>
 				</div>
 				
