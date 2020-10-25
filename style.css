@@ -1628,3 +1628,11 @@ h1.main-header.has-text-align-center{
 		transform: translateX(-5px)
 	}
 }
+
+
+@media print {
+  .arrow, .menu-button {
+    display: none;
+  }
+
+}
