@@ -74,7 +74,7 @@
 						<?php endif; ?>
 
 						<br>
-						<li class="li-print"><a href="" onclick="window.print();">Print this Proposal</a></li>
+						<li class="li-print"> <i class="fa fa-print" aria-hidden="true"></i> <a href="" onclick="window.print();"> Print</a></li>
 
 					</ul>
 				</div>

@@ -1632,6 +1632,12 @@ h1.main-header.has-text-align-center{
 
 
 
+li.li-print a {
+    width: 50%;
+    margin: auto;
+    background: #e21736;
+    color: white;
+}
 
 @media print {
     @page {
@@ -1679,4 +1685,18 @@ h1.main-header.has-text-align-center{
 	.jspVerticalBar {
 	    display: none;
 	}
+
+	.block_readmore {
+	    position: relative!important;
+	    border: none!important;
+	    height: auto!important;
+	    background-color: transparent;
+	}
+	.block_readmore_inner, .block_readmore_inner .container {
+	    padding: 0;
+	}
+	#readmore-close {
+	    display: none;
+	}
+
 }
