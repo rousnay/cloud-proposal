@@ -1635,19 +1635,23 @@ h1.main-header.has-text-align-center{
 @media print {
     @page {
     	size: A4 landscape;
+    	margin: 0;
     }
 	body {
 	    overflow: auto!important;
+	    zoom: 140%;
 	    /*width: 1400px!important;*/
 	}
+
 	.col-logo {
-		max-width: 1270px!important;
+		max-width: 100%!important;
 	}
 	.cdw-logo {
-		margin-left: 0!important;
+		margin-left: 40px!important;
+		padding-top: 20px;
 	}
 	header hr {
-	    width: auto!important;
+	    width: calc(100% - 80px)!important;
 	}
 	.bb-item {
 	    display: block!important;
@@ -1655,5 +1659,18 @@ h1.main-header.has-text-align-center{
 	}
 	.arrow, .menu-button, .btn_readmore, .block_readmore {
 	    display: none!important;
+	}
+
+	.jspContainer {
+	    display: block;
+	    width: 100%!important;
+	    height: 100%!important;
+	}
+	.slider-inner .content {
+	    position: relative!important;
+	    width: 100%!important;
+	}
+	.jspPane {
+	    position: relative!important;
 	}
 }
