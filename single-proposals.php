@@ -89,10 +89,8 @@
 
 							<div class="content">
 								
-
-								<div class="container">
-
-									<div class="scroller">
+								<div class="scroller">
+									<div class="container">
 
 
 										<!-- <div class="header"><img src="<?php //the_field('company_logo_main'); ?>"></div> -->
