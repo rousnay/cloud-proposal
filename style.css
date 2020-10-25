@@ -1632,7 +1632,7 @@ h1.main-header.has-text-align-center{
 
 
 
-@media print {
+/*@media print {
     @page {
     	size: A4 landscape;
     	margin: 0;
@@ -1640,7 +1640,6 @@ h1.main-header.has-text-align-center{
 	body {
 	    overflow: auto!important;
 	    zoom: 140%;
-	    /*width: 1400px!important;*/
 	}
 
 	.col-logo {
@@ -1673,4 +1672,4 @@ h1.main-header.has-text-align-center{
 	.jspPane {
 	    position: relative!important;
 	}
-}
+}*/
