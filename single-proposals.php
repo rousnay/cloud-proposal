@@ -33,48 +33,48 @@
 
 		<header> 
 			<div class="row">
-				<div class="col">
+				<div class="col col-logo">
 					<img class="cdw-logo logo-red" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_red.png"><!-- <img class="cdw-logo logo-white" src="<?php //echo get_stylesheet_directory_uri(); ?>/images/cdw_logo_white.png"> -->
 					<hr>
 				</div>
 				
-					<div class="menu-panel">
-						<h3><?php the_title(); ?> <span>Proposal</span></h3>
-						<ul id="menu-toc" class="menu-toc">
+				<div class="menu-panel">
+					<h3><?php the_title(); ?> <span>Proposal</span></h3>
+					<ul id="menu-toc" class="menu-toc">
 
-							<li class="menu-toc-current"><a href="#slide-main"><?php the_field('heading_main'); ?></a></li>
-							<?php if( get_field('heading_1') ): ?>
-								<li><a href="#first-slide"><?php the_field('heading_1'); ?></a></li>
-							<?php endif; ?>
+						<li class="menu-toc-current"><a href="#slide-main"><?php the_field('heading_main'); ?></a></li>
+						<?php if( get_field('heading_1') ): ?>
+							<li><a href="#first-slide"><?php the_field('heading_1'); ?></a></li>
+						<?php endif; ?>
 
-							<?php if( have_rows('slides') ): ?>
-								<?php while( have_rows('slides') ): the_row(); ?>
-									<li><a href="#slide-<?php echo get_row_index(); ?>"><?php the_sub_field('heading'); ?></a></li>
-								<?php endwhile; ?>
-							<?php endif; ?>
+						<?php if( have_rows('slides') ): ?>
+							<?php while( have_rows('slides') ): the_row(); ?>
+								<li><a href="#slide-<?php echo get_row_index(); ?>"><?php the_sub_field('heading'); ?></a></li>
+							<?php endwhile; ?>
+						<?php endif; ?>
 
-							<?php if( $master_slides ): ?>
-								<?php foreach( $master_slides as $key=>$post ): 
-									setup_postdata($post); ?>
+						<?php if( $master_slides ): ?>
+							<?php foreach( $master_slides as $key=>$post ): 
+								setup_postdata($post); ?>
 
-									<li><a href="#slide-template-<?php echo $key ?>"><?php the_title(); ?></a></li>
+								<li><a href="#slide-template-<?php echo $key ?>"><?php the_title(); ?></a></li>
 
-								<?php endforeach; ?>
-								<?php wp_reset_postdata(); ?>
-							<?php endif; ?>
+							<?php endforeach; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 
-							<?php
-							if( get_field('add_pricing_table') == 'true' ): ?>
-								<li><a href="#slide-table">Pricing Table</a></li>
-							<?php endif; ?>
+						<?php
+						if( get_field('add_pricing_table') == 'true' ): ?>
+							<li><a href="#slide-table">Pricing Table</a></li>
+						<?php endif; ?>
 
-							<?php
-							if( get_field('contact_us_slide') == 'true' ) : ?>
-								<li><a href="#slide-contact">Contact Us</a></li>
-							<?php endif; ?>
+						<?php
+						if( get_field('contact_us_slide') == 'true' ) : ?>
+							<li><a href="#slide-contact">Contact Us</a></li>
+						<?php endif; ?>
 
-						</ul>
-					</div>
+					</ul>
+				</div>
 				
 			</div>
 		</header>
@@ -236,84 +236,85 @@
 						<div class="bb-item" id="slide-table">
 
 
+							<div class="slider-inner">
 
+								<div class="content">
+									<div class="scroller">
 
-							<div class="content">
-								<div class="scroller">
+										<div class="container">
+											<h1 class="main-header">Pricing Table</h1>
+											<?php
+											$table = get_field( 'pricing_table' );
 
-									<div class="container">
-										<h1 class="main-header">Pricing Table</h1>
-										<?php
-										$table = get_field( 'pricing_table' );
+											if ( ! empty ( $table ) ) {
 
-										if ( ! empty ( $table ) ) {
+												echo '<table border="0">';
 
-											echo '<table border="0">';
+												if ( ! empty( $table['caption'] ) ) {
 
-											if ( ! empty( $table['caption'] ) ) {
-
-												echo '<caption>' . $table['caption'] . '</caption>';
-											}
-
-											if ( ! empty( $table['header'] ) ) {
-
-												echo '<thead>';
-
-												echo '<tr>';
-
-												foreach ( $table['header'] as $th ) {
-
-													echo '<th>';
-													echo $th['c'];
-													echo '</th>';
+													echo '<caption>' . $table['caption'] . '</caption>';
 												}
 
-												echo '</tr>';
+												if ( ! empty( $table['header'] ) ) {
 
-												echo '</thead>';
-											}
+													echo '<thead>';
 
-											echo '<tbody>';
+													echo '<tr>';
 
-											foreach ( $table['body'] as $tr ) {
+													foreach ( $table['header'] as $th ) {
 
-												echo '<tr>';
+														echo '<th>';
+														echo $th['c'];
+														echo '</th>';
+													}
 
-												foreach ( $tr as $td ) {
+													echo '</tr>';
 
-													echo '<td>';
-													echo $td['c'];
-													echo '</td>';
+													echo '</thead>';
 												}
 
-												echo '</tr>';
+												echo '<tbody>';
+
+												foreach ( $table['body'] as $tr ) {
+
+													echo '<tr>';
+
+													foreach ( $tr as $td ) {
+
+														echo '<td>';
+														echo $td['c'];
+														echo '</td>';
+													}
+
+													echo '</tr>';
+												}
+
+												echo '</tbody>';
+
+												echo '</table>';
 											}
 
-											echo '</tbody>';
 
-											echo '</table>';
-										}
+											?>
 
+										</div>
 
-										?>
 
 									</div>
-
-
-								</div></div>
-
-
+								</div>
 							</div>
 
-						<?php endif;?>
+						</div>
+
+					<?php endif;?>
 
 
-						<?php
-						if( get_field('contact_us_slide') == 'true' ) : ?>
+					<?php
+					if( get_field('contact_us_slide') == 'true' ) : ?>
 
-							<div class="bb-item" id="slide-contact">
+						<div class="bb-item" id="slide-contact">
 
-
+							<div class="slider-inner">
 								<div class="content">
 									<div class="scroller">
 										<div class="container">
@@ -336,24 +337,26 @@
 
 									</div>
 								</div>
+
 							</div>
-						<?php endif;?>
-
-					</div>
-
-					<nav class="arrow">
-						<span id="bb-nav-next" class="animate-surf-hint"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></span>
-						<span id="bb-nav-prev"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></span>
-
-					</nav>
-					<span id="tblcontents" class="menu-button">Table of Contents</span>
+						</div>
+					<?php endif;?>
 
 				</div>
 
+				<nav class="arrow">
+					<span id="bb-nav-next" class="animate-surf-hint"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></span>
+					<span id="bb-nav-prev"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></span>
+
+				</nav>
+				<span id="tblcontents" class="menu-button">Table of Contents</span>
+
 			</div>
-		</main><!-- #main -->
+
+		</div>
+	</main><!-- #main -->
 
 
-		<?php
-		get_sidebar();
-		get_footer();
+	<?php
+	get_sidebar();
+	get_footer();

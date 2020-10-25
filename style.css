@@ -1630,9 +1630,30 @@ h1.main-header.has-text-align-center{
 }
 
 
-@media print {
-  .arrow, .menu-button {
-    display: none;
-  }
 
+
+@media print {
+    @page {
+    	size: A4 landscape;
+    }
+	body {
+	    overflow: auto!important;
+	    /*width: 1400px!important;*/
+	}
+	.col-logo {
+		max-width: 1270px!important;
+	}
+	.cdw-logo img {
+		margin-left: 0!important;
+	}
+	header hr {
+	    width: auto!important;
+	}
+	.bb-item {
+	    display: block!important;
+	    position: relative!important;
+	}
+	.arrow, .menu-button, .btn_readmore, .block_readmore {
+	    display: none!important;
+	}
 }
