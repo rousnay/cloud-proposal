@@ -1633,16 +1633,17 @@ h1.main-header.has-text-align-center{
 
 
 
-/*@media print {
+@media print {
     @page {
     	size: A4 landscape;
     	margin: 0;
     }
 	body {
 	    overflow: auto!important;
-	    zoom: 140%;
 	}
-
+	.slideRight {
+	    right: 0;
+	}
 	.col-logo {
 		max-width: 100%!important;
 	}
@@ -1657,7 +1658,7 @@ h1.main-header.has-text-align-center{
 	    display: block!important;
 	    position: relative!important;
 	}
-	.arrow, .menu-button, .btn_readmore, .block_readmore {
+	.arrow, .menu-toc, .menu-panel, .menu-button, .btn_readmore, .block_readmore {
 	    display: none!important;
 	}
 
@@ -1669,8 +1670,13 @@ h1.main-header.has-text-align-center{
 	.slider-inner .content {
 	    position: relative!important;
 	    width: 100%!important;
+	    height: 100%;!important;
+	    overflow: auto!important;
 	}
 	.jspPane {
 	    position: relative!important;
 	}
-}*/
+	.jspVerticalBar {
+	    display: none;
+	}
+}
