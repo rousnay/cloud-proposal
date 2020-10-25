@@ -1658,7 +1658,7 @@ h1.main-header.has-text-align-center{
 	    display: block!important;
 	    position: relative!important;
 	}
-	.arrow, .menu-toc, .menu-panel, .menu-button, .btn_readmore, .block_readmore {
+	.arrow, .menu-button, .menu-panel, .menu-toc, .btn_readmore{
 	    display: none!important;
 	}
 
